@@ -34,16 +34,196 @@
     </header>
     <main class="container">
       <h1>Assignment 2 - Working on Django</h1>
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube-nocookie.com/embed/_F6vUKkXc8w?si=XnISXo4iC2SsPTpG"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
-      ></iframe>
+      <p>
+        GT Movies Store is a web application for an online movie store developed
+        based on the Django. It provides users with a complete experience of
+        browsing, searching, purchasing movies, and writing reviews. The project
+        adopts the MVT (Model-View-Template) architectural pattern.
+      </p>
+      <section>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube-nocookie.com/embed/_F6vUKkXc8w?si=XnISXo4iC2SsPTpG"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </section>
+      <section>
+        <h2>Process Description</h2>
+        <p>
+          I think I was using an Agile development approach, since there wasn't
+          a fully completed plan before I finished the project, and I
+          implemented it module by module, chapter by chapter in the book.
+          Having prior experience with Express.js and Flask, the MVT pattern was
+          not new to me. However, this was my first time using a framework with
+          built-in ORM support.
+        </p>
+        <p>
+          Following the book, I first implemented a static home module, then the
+          movies module - initially with dummy data and later with defined
+          models. After that, I completed the rest of the MVT components for the
+          users and cart modules.
+        </p>
+        <p>
+          I didn't encounter any major questions or doubts during the
+          development, since the process was similar to Flask and I was closely
+          following the book. What impressed me most was Django's built-in
+          administration panel, authentication system, and ORM - all of which
+          need to be implemented manually in Flask. These features made
+          prototyping much more enjoyable, and I appreciated the flexibility of
+          being able to switch database backends easily (I usually use SQLite
+          for development and PostgreSQL for production).
+        </p>
+      </section>
+      <section>
+        <h2>User Story Implementation</h2>
+        <h3>Information Display and Navigation</h3>
+        <article>
+          <h4>User Story 1</h4>
+          <p>
+            "As a user, l want to see information about the GT Movies Store so l
+            can learn moreabout the app and its purpose."
+          </p>
+          <ul>
+            <li>
+              Homepage: <code>home/index.html</code> (under
+              <code>home/</code> App) provides a simple welcome message.
+            </li>
+            <li>
+              About: <code>home/about.html</code> (under <code>home/</code> App)
+              details features and goals.
+            </li>
+            <li>
+              Footer (defined in <code>base.html</code>) contains contact info
+              and a brief app description.
+            </li>
+          </ul>
+        </article>
+        <article>
+          <h4>User Stories 15 to 16</h4>
+          <p>Responsive design</p>
+          <ul>
+            <li>Bootstrap-based layout (Support different screen sizes).</li>
+          </ul>
+        </article>
+        <h3>User Authentication</h3>
+        <article>
+          <h4>User Stories 2 to 3</h4>
+          <p>User registration and login functionality</p>
+          <ul>
+            <li>
+              Views: <code>signup()</code> and <code>login()</code> in
+              <code>accounts/views.py</code> (<code>accounts/</code>).
+            </li>
+            <li>
+              Form: <code>CustomUserCreationForm</code> for sign-up customized
+              from Django's <code>UserCreationForm</code>.
+            </li>
+            <li>
+              Password validation, error handling, and session management from
+              Django.
+            </li>
+          </ul>
+        </article>
+        <h3>Movie Browsing and Search</h3>
+        <article>
+          <h4>User Stories 4 to 5</h4>
+          <p>View the movie list and search for movies</p>
+          <ul>
+            <li>
+              List view: <code>index()</code> in
+              <code>movies/views.py</code> (<code>movies/</code>).
+            </li>
+            <li>Search: Django ORM <code>icontains</code> filter by title;</li>
+            <li>
+              Backed by <strong><code>Movie</code></strong> model (title, price,
+              description, image) in <code>movies/</code>.
+            </li>
+          </ul>
+        </article>
+        <article>
+          <h4>User Story 13</h4>
+          <p>View movie details</p>
+          <ul>
+            <li>
+              Template: <code>movies/show.html</code> (<code>movies/</code>)
+              shows details (description, price, image) and reviews.
+            </li>
+            <li>
+              Reviews provided by <strong><code>Review</code></strong> model in
+              <code>movies/</code>.
+            </li>
+          </ul>
+        </article>
+        <h3>Shopping Cart</h3>
+        <article>
+          <h4>User Stories 6 to 7, 9</h4>
+          <p>Shopping cart functionality</p>
+          <ul>
+            <li>
+              Cart stored in the database using models in <code>cart/</code>.
+            </li>
+            <li>Views: add/remove/clear in <code>cart/views.py</code>.</li>
+            <li>
+              Totals price computed using
+              <code>calculate_cart_total(cart, movies_in_cart)</code> in
+              <code>cart/utils.py</code>.
+            </li>
+            <li>Supports multiple quantities per movie.</li>
+            <li>
+              Orders recorded by <strong><code>Order</code></strong> (total,
+              date, user) and <strong><code>Item</code></strong> (price,
+              quantity, movie) models in <code>cart/</code>.
+            </li>
+          </ul>
+        </article>
+        <h3>Review System</h3>
+        <article>
+          <h4>User Stories 8, 10 to 12</h4>
+          <p>Movie review functionality</p>
+          <ul>
+            <li>
+              CRUD operations for reviews in
+              <code>movies/views.py</code> (<code>movies/</code>).
+            </li>
+            <li>Users can edit only their own reviews.</li>
+            <li>Reviews displayed in chronological order.</li>
+            <li>
+              Data model: <strong><code>Review</code></strong> (content, date,
+              user, movie) in <code>movies/</code>.
+            </li>
+          </ul>
+        </article>
+        <h3>Order Management</h3>
+        <article>
+          <h4>User Story 14</h4>
+          <p>View order history</p>
+          <ul>
+            <li>
+              Template:
+              <code>accounts/orders.html</code> (<code>accounts/</code>) lists
+              past orders (purchase date, total price, item list).
+            </li>
+          </ul>
+        </article>
+        <h3>Administration</h3>
+        <article>
+          <h4>User Stories 17 to 20</h4>
+          <p>Administrator management</p>
+          <ul>
+            <li>Django Admin configured in <code>admin.py</code>.</li>
+            <li>Admins can CRUD users, movies, reviews, and orders.</li>
+          </ul>
+        </article>
+      </section>
+      <section>
+        <h2>Deployment</h2>
+        <a href="https://hjh604.pythonanywhere.com/">Pythonanywhere</a>
+      </section>
     </main>
     <footer>© 2025 Junhui Huang. All rights reserved.</footer>
   </body>
