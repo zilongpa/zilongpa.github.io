@@ -24,146 +24,116 @@
           <li><a href="/">About Me</a></li>
           <li><a href="/work-experience">Work Experience</a></li>
           <li><a href="/projects">Projects</a></li>
+          <li><a href="/assignments"><strong>Assignments (CS2340)</strong></a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
       </nav>
     </header>
     <main class="container">
       <h1>Projects</h1>
-      <!-- <section>
+      <section>
         <article>
-          <h2>LLM based resumes ranking system</h2>
+          <h2>TOTP-based Attendance App</h2>
           <ul>
-            <li>-</li>
-            <li>-</li>
-            <li>-</li>
+            <li>
+              Implemented a Next.js system on the T3 stack (tRPC, Tailwind,
+              Prisma, PostgreSQL) with TOTP-encoded dynamic Data-Matrix barcodes
+            </li>
+            <li>
+              Features offline caching for weak-network environments and Google
+              OAuth; deployed serverlessly on Vercel for seamless use by
+              non-technical staff
+            </li>
+            <li>
+              Successfully tested in a 120-student underground auditorium during
+              BU CS391, leading the professor to adopt it for next semester and
+              invite me as a course assistant
+            </li>
           </ul>
-          <footer>2024 Summer</footer>
+          <footer>Spring 2025</footer>
         </article>
       </section>
       <section>
         <article>
-          <h2>Real-time online voting system for a talent show</h2>
-          <ul>
-            <li>-</li>
-            <li>-</li>
-            <li>-</li>
-          </ul>
-          <footer>2024 Spring</footer>
-        </article>
-      </section> -->
-      <section>
-        <article>
-          <h2>
-            <a href="https://www.bucssa.org/"
-              >BUCSSA application portal & official website</a
-            >
-          </h2>
+          <h2>Interactive CPU Learning Simulator</h2>
           <ul>
             <li>
-              As a vice president and elected president of BUCSSA(Boston University Chinese Students & Scholars Association) Technology Department, developed and
-              maintained a website with features including freshman orientation,
-              event registration, accounting and sponsorship management, and
-              real-time high-concurrency voting.
+              Built an interactive teaching CPU (DEC Beta ISA, a simplified RISC
+              architecture from MIT) with step execution, live register/memory
+              editing, and animated datapath visualizations
             </li>
             <li>
-              The main development was done using Flask and React, with SASS as
-              the CSS preprocessor. The high-concurrency components were
-              developed using Rust and the Tokio multi-threading framework,
-              while AWS MySQL was used for the database.
+              Developed using React for browser-based interactive learning
+              experience
             </li>
             <li>
-              Utilized Caddy and Cloudflare for reverse proxying, deployed the system on AWS
-              EC2 instances with Github Action, and integrated Sentry for
-              real-time error tracking.
+              Released as open-source web/desktop app; adopted in BU's CS210 and
+              part of the MIT teaching tradition via OpenCourseWare
             </li>
           </ul>
-          <footer>Spring 2024</footer>
+          <footer>Winter 2024</footer>
         </article>
       </section>
       <section>
         <article>
           <h2>
-            <a href="https://www.bucssa.org/"
-              >BUCSSA application portal & official website</a
-            >
+            Optimizing BU Professors' Classroom Allocation to Minimize Walking
+            Cost
           </h2>
           <ul>
             <li>
-              As a vice president and elected president of the BUCSSA Technology Department, developed and
-              maintained a website with features including freshman orientation,
-              event registration, accounting and sponsorship management, and
-              real-time high-concurrency voting.
+              Built a Python/Numpy simulated-annealing scheduler with
+              campus-scale distance modeling using OSMnx
             </li>
             <li>
-              The main development was done using Flask and React, with SASS as
-              the CSS preprocessor. The high-concurrency components were
-              developed using Rust and the Tokio multi-threading framework,
-              while AWS MySQL was used for the database.
+              Achieved 97% reduction in faculty walking distance across five
+              weekdays through optimization algorithms
             </li>
             <li>
-              Utilized Caddy and Cloudflare for reverse proxying, deployed the system on AWS
-              EC2 instances with Github Action, and integrated Sentry for
-              real-time error tracking.
+              Processed and cleaned 200k+ SIS course and classroom records into
+              optimization-ready datasets in under 20 minutes
+            </li>
+            <li>
+              Enabled simulated-annealing runs within 8 GB RAM (earlier MILP
+              prototype overflowed 128 GB)
             </li>
           </ul>
-          <footer>Spring 2024</footer>
+          <footer>Fall 2024</footer>
         </article>
       </section>
       <section>
         <article>
-          <h2>Interactive circuit playground</h2>
+          <h2>
+            <a href="https://www.bucssa.org/">BUCSSA Digital Infrastructure</a>
+          </h2>
           <ul>
             <li>
-              Inspired by an open-source project called CircuitJS, implemented
-              in 3D game engine to make it less abstract for secondary school
-              students.
+              As president, directed development of a full-stack student
+              platform: event registration, sponsorship management, real-time
+              talent-show voting (handling 500 concurrent users and 2k+
+              websocket requests/sec), accounting tools, and a secure chair
+              election portal.
             </li>
             <li>
-              Created using Unreal Engine 4, the model was crafted with SketchUP
-              and Blender, with materials designed using Substance 3D.
+              Built an LLM onboarding assistant by engaging the student
+              community to contribute multilingual QA pairs and fine-tuning
+              Qwen-2.5 with RAG on BU resources, creating a collaborative
+              onboarding tool for FAQs on housing, transport, culture, and
+              careers.
+            </li>
+            <li>
+              Platform serves 1k registered users, 3.5k unique monthly visitors,
+              and 77k monthly requests; enabled cross-department collaboration
+              within a 120-member association, partnerships with campus clubs,
+              BU administration, and the Eastern/Central US CSSA Alliance.
+            </li>
+            <li>
+              Recruited new developers, mentored junior members, and drove a
+              cloud cost-reduction strategy—cutting spend by 30% through
+              diversifying infrastructure and reducing reliance on AWS.
             </li>
           </ul>
-          <footer>Winter 2022</footer>
-        </article>
-      </section>
-      <section>
-        <article>
-          <h2>Implementation of a P2P multiplayer game</h2>
-          <ul>
-            <li>
-              A multiplayer pixel-platformer game based on the pygame library
-              and UDP sockets.
-            </li>
-            <li>
-              The whole system could run without a centralized server, and
-              clients could join the session by inputting the address of any
-              other player.
-            </li>
-          </ul>
-          <footer>Spring 2022</footer>
-        </article>
-      </section>
-      <section>
-        <article>
-          <h2>ManageBac assistant</h2>
-          <ul>
-            <li>
-              A web crawler enabling students to estimate their GPA by providing
-              their ManageBac session token, especially when the school has
-              disabled the feature displaying the overall score.
-            </li>
-            <li>
-              The UI is supported by Capacitor and Echarts, with the crawler
-              implemented on multiple platforms using Node.js (Electron) for
-              desktop, Java for Android, and Swift for iOS.
-            </li>
-            <li>
-              Approximately 60% of students have in installed on their laptops
-              in school, with an overall estimation accuracy of about 75%.
-            </li>
-          </ul>
-          <footer>Winter 2021</footer>
+          <footer>Spring 2024 – Summer 2025</footer>
         </article>
       </section>
       <section>
@@ -184,6 +154,6 @@
         </article>
       </section>
     </main>
-    <footer>© 2024 Junhui Huang. All rights reserved.</footer>
+    <footer>© 2025 Junhui Huang. All rights reserved.</footer>
   </body>
 </html>
